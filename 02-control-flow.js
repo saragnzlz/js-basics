@@ -64,3 +64,8 @@ for( let key in person ){
 const colors = ['blue', "red", 0];
 for (let index in colors)
     console.log(index, colors[index])
+
+// For ... of
+
+for (let color of colors)
+    console.log(color);
