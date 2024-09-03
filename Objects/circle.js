@@ -37,7 +37,8 @@ let f = {};
 let xx = new Object();
 
 new String();
-//// Strings are Objects in JavaScript
+//// Strings are Objects in JavaScript, which can be declared like so: '', ``, ""
+new Boolean(); // true,1,"unempty string"; false,0,""
 
 function Circle (radius){
     this.radius = radius;
