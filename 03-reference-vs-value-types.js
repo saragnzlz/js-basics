@@ -28,3 +28,31 @@ console.log(z,v);
 
 // - Primitives are copied by their value
 // - Objects are copied by reference
+
+
+// ***
+
+let number;
+number = 10;
+
+function increase (number){
+    number++;
+}
+
+increase(number);
+console.log(number);
+// Result is still 10
+// The value is dependent of context, it increases INSIDE the function
+
+let num = {value:10};
+
+increase(num);
+console.log(num);
+// Does nothing
+
+function increaseObject(obj){
+    obj.value++;
+}
+
+increaseObject(num);
+console.log(num);
