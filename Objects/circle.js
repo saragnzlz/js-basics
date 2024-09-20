@@ -53,3 +53,12 @@ circle4.draw = function(){ console.log('draw a yellow circle')}
 console.log(circle4)
 
 delete circle4.draw
+
+// Objects are functions in JavaScript
+
+const Circle1 = new Function('radius',`
+    this.radius = radius;
+    this.draw = function(){ console.log('draw')};
+    `);
+
+const circle6 = new Circle1
