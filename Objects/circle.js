@@ -62,3 +62,43 @@ const Circle1 = new Function('radius',`
     `);
 
 const circle6 = new Circle1
+
+
+
+// Enumerating properties in an object
+console.log('***')
+console.log(`All keys in 'circle':`)
+for (let key in circle) {
+    console.log(key, circle[key])
+}
+
+
+// 'Circle is not iterable' -> Only for 'Array' and 'Map' objects:
+//for(let key of circle){
+//    console.log(keys)
+//}
+
+console.log(`All keys in 'circle':`)
+// Object.keys will return an Array
+for ( let key of Object.keys(circle) ){
+    console.log(key, circle[key])
+}
+console.log(`All keys in 'circle':`)
+for( let key of Object.entries(circle)){
+    console.log(key)
+}
+
+// Checking for keys in an Object:
+if('radius' in circle) {
+    console.log(`radius is a property of the 'circle' object :`+circle.radius)
+}else{
+    console.log(`radius is not a property of the 'circle' object`)
+}
+
+// Checking for keys in an Object:
+if('color' in circle) {
+    console.log(`color is a property of the 'circle' object :`+circle.color)
+}else{
+    console.log(`color is not a property of the 'circle' object`)
+}
+console.log('***')
