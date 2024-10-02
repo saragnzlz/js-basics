@@ -1,6 +1,9 @@
 // The purpose of an object is to group related variables
 // Functions inside of objects are 'Methods'
 
+const { yellow } = require("@material-ui/core/colors");
+
+// An Object:
 const circle = {
     radius: 1,
     location: {
@@ -13,7 +16,10 @@ const circle = {
 circle.draw()
 console.log(circle.location.x)
 
-// Factory Function: 
+// ***
+// Object Factory Functions and Methods:
+
+// Factory Function for said Object: 
 function createCircle(radius, x, y){
     return {
         radius: radius,
@@ -31,11 +37,12 @@ console.log(circle2)
 console.log(circle3)
 
 // Constructor function
-
 let f = {};
 //// is the same as
 let xx = new Object();
 
+// ***
+// Other types as Objects:
 new String();
 //// Strings are Objects in JavaScript, which can be declared like so: '', ``, ""
 new Boolean(); // true,1,"unempty string"; false,0,""
@@ -47,15 +54,18 @@ function Circle (radius){
 
 const circle4 = new Circle(1);
 
-// Dynamic
+// ***
+// Dynamic typing
 circle4.color = 'yellow'
 circle4.draw = function(){ console.log('draw a yellow circle')}
 console.log(circle4)
 
 delete circle4.draw
 
-// Objects are functions in JavaScript
+// ***
+// Objects as functions:
 
+// Objects are functions in JavaScript
 const Circle1 = new Function('radius',`
     this.radius = radius;
     this.draw = function(){ console.log('draw')};
@@ -63,8 +73,7 @@ const Circle1 = new Function('radius',`
 
 const circle6 = new Circle1
 
-
-
+// ***
 // Enumerating properties in an object
 console.log('***')
 console.log(`All keys in 'circle':`)
@@ -102,3 +111,20 @@ if('color' in circle) {
     console.log(`color is not a property of the 'circle' object`)
 }
 console.log('***')
+
+// ***
+// Cloning objects
+const another1 = {
+};
+
+for (let key in circle) 
+    another1[key] = circle[key]
+
+Object.assign(another2, circle)
+
+const another3 = Object.assign({
+    color: 'yellow'
+}, circle)
+
+// Spread operator
+const another4 = {...circle}
