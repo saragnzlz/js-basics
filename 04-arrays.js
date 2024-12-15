@@ -63,3 +63,51 @@ console.log(apples.lastIndexOf(1))
 //4
 console.log(apples.lastIndexOf(1,1))
 //0
+
+
+// Reference types
+const courses = [
+    {id: 1, name: 'a'},
+    {id: 2, name: 'b'}
+]
+
+// '.find()'
+// Here because the reference is allocated in another memory slot, 
+// '.includes()' can't be used.
+// The '.find()' function returns the first element in the array that 
+// satisfies the provided testing function.
+// These functions are called predicates or callback, they're used to 
+// check if the given element exists in the array because, as we said, 
+// it cannot be compared directly.
+courses.find(function(course){
+    return course.name === 'a'
+})
+//true
+
+courses.find(function(course){
+    return course.name === 'd'
+})
+//false
+
+// '.findIndex()'
+courses.findIndex(function(course){
+    return course.name === 'a'
+})
+//0
+
+courses.findIndex(function(course){
+    return course.name === 'd'
+})
+//-1
+
+// Arrow functions
+// Used to call functions, pre-existant or not:
+const courseC = courses.find( (course) =>{
+    return course.name === 'a';
+})
+const courseA = courses.find( course =>{
+    return course.name === 'a';
+})
+const courseB = courses.find( course => course.name === 'a');
+
+
